@@ -29,3 +29,18 @@ KIWOOM_MODE_MAIN=real   # 생략 시 demo
 
 미설정 시 `your_app_key` placeholder가 전달되어, 도구 목록은 보이지만 실제 조회는 인증 오류(8001)가 납니다.
 모의투자(`demo`, 기본)와 실전투자(`real`)는 서로 다른 키를 씁니다.
+
+## 내 PC(Windows)에 설치 — 권장
+
+키움 REST API는 등록된 IP에서만 호출됩니다(오류 8050). 클라우드 세션은 외부 IP가 고정되지 않아 등록이 어렵기 때문에 PC 설치를 권장합니다.
+
+1. Claude 앱 완전 종료 (시스템 트레이 아이콘 → 종료)
+2. `windows/install-kiwoom-mcp.ps1`을 PC에 저장 후 PowerShell에서 실행
+   ```powershell
+   powershell -ExecutionPolicy Bypass -File .\install-kiwoom-mcp.ps1
+   ```
+3. 계좌별(메인/서브/자동/띨띨) APP_KEY, APP_SECRET, 모드(real/demo) 입력 — 입력값은 화면에 표시되지 않음, Enter = 기존 값 유지
+4. 마지막에 출력되는 공인 IP를 키움 개발자센터 > API 사용신청 > IP 등록 (계좌 4개 모두)
+5. Claude 앱 재실행
+
+등록 위치: `%APPDATA%\Claude\claude_desktop_config.json`(Desktop 채팅), `%USERPROFILE%\.claude.json`(Claude Code). 기존 파일은 `*.bak-날짜`로 백업됩니다.

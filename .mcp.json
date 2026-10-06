@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "kiwoom-spec": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--frozen", "--directory", "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_spec", "kiwoom-spec-mcp"]
+    },
+    "kiwoom-exec": {
+      "type": "stdio",
+      "command": "uv",
+      "args": ["run", "--frozen", "--directory", "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_exec", "kiwoom-exec-mcp"],
+      "env": {
+        "APP_KEY": "${APP_KEY:-your_app_key}",
+        "APP_SECRET": "${APP_SECRET:-your_app_secret}",
+        "KIWOOM_MODE": "${KIWOOM_MODE:-demo}",
+        "KIWOOM_MCP_ALLOW_ORDERS": "1"
+      }
+    }
+  }
+}

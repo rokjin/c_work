@@ -12,5 +12,11 @@
       }
     ]
   },
-  "enabledMcpjsonServers": ["kiwoom-spec", "kiwoom-exec"]
+  "enabledMcpjsonServers": [
+    "kiwoom-spec",
+    "kiwoom-exec-main",
+    "kiwoom-exec-sub",
+    "kiwoom-exec-auto",
+    "kiwoom-exec-ttil"
+  ]
 }

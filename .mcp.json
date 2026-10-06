@@ -3,16 +3,79 @@
     "kiwoom-spec": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "--frozen", "--directory", "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_spec", "kiwoom-spec-mcp"]
+      "args": [
+        "run",
+        "--frozen",
+        "--directory",
+        "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_spec",
+        "kiwoom-spec-mcp"
+      ]
     },
-    "kiwoom-exec": {
+    "kiwoom-exec-main": {
       "type": "stdio",
       "command": "uv",
-      "args": ["run", "--frozen", "--directory", "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_exec", "kiwoom-exec-mcp"],
+      "args": [
+        "run",
+        "--frozen",
+        "--directory",
+        "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_exec",
+        "kiwoom-exec-mcp"
+      ],
       "env": {
-        "APP_KEY": "${APP_KEY:-your_app_key}",
-        "APP_SECRET": "${APP_SECRET:-your_app_secret}",
-        "KIWOOM_MODE": "${KIWOOM_MODE:-demo}",
+        "APP_KEY": "${APP_KEY_MAIN:-your_app_key}",
+        "APP_SECRET": "${APP_SECRET_MAIN:-your_app_secret}",
+        "KIWOOM_MODE": "${KIWOOM_MODE_MAIN:-demo}",
+        "KIWOOM_MCP_ALLOW_ORDERS": "1"
+      }
+    },
+    "kiwoom-exec-sub": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--frozen",
+        "--directory",
+        "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_exec",
+        "kiwoom-exec-mcp"
+      ],
+      "env": {
+        "APP_KEY": "${APP_KEY_SUB:-your_app_key}",
+        "APP_SECRET": "${APP_SECRET_SUB:-your_app_secret}",
+        "KIWOOM_MODE": "${KIWOOM_MODE_SUB:-demo}",
+        "KIWOOM_MCP_ALLOW_ORDERS": "1"
+      }
+    },
+    "kiwoom-exec-auto": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--frozen",
+        "--directory",
+        "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_exec",
+        "kiwoom-exec-mcp"
+      ],
+      "env": {
+        "APP_KEY": "${APP_KEY_AUTO:-your_app_key}",
+        "APP_SECRET": "${APP_SECRET_AUTO:-your_app_secret}",
+        "KIWOOM_MODE": "${KIWOOM_MODE_AUTO:-demo}",
+        "KIWOOM_MCP_ALLOW_ORDERS": "1"
+      }
+    },
+    "kiwoom-exec-ttil": {
+      "type": "stdio",
+      "command": "uv",
+      "args": [
+        "run",
+        "--frozen",
+        "--directory",
+        "${HOME}/.local/share/mcp/Kiwoom-REST-API/mcp_exec",
+        "kiwoom-exec-mcp"
+      ],
+      "env": {
+        "APP_KEY": "${APP_KEY_TTIL:-your_app_key}",
+        "APP_SECRET": "${APP_SECRET_TTIL:-your_app_secret}",
+        "KIWOOM_MODE": "${KIWOOM_MODE_TTIL:-demo}",
         "KIWOOM_MCP_ALLOW_ORDERS": "1"
       }
     }
